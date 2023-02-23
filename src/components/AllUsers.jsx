@@ -61,7 +61,6 @@ const TablePadding = styled(TableCell)`
   }
 `
 const TableInfo = styled(TableCell)`
-  margin-right: 10px;
   @media (max-width: 1200px){
     :nth-of-type(3n + 2) {
       width: 10%;
@@ -78,27 +77,28 @@ const TableInfo = styled(TableCell)`
     :nth-of-type(3n + 6) {
       width: 14%;
     }
-    :nth-of-type(3n + 7) {
-      width: 20%;
-    }
   }
   @media (max-width: 900px){
     :nth-of-type(3n + 2) {
       width: 8%;
     }
-    :nth-of-type(3n + 7) {
-      width: 22%;
-    }
-    :last-of-type {
-      width: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      gap: 6px;
-      padding-block: 8px;
-    }
+  }
+`
+const TableButtons = styled(TableCell)`
+  display: flex;
+  width: auto;
+  justify-content: center;
+  gap: 10px;
+  @media (max-width: 1200px){
+    width: auto;
+    gap: 6px;
+  }
+  @media (max-width: 900px){
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 8px;
   }
 `
 
@@ -261,12 +261,12 @@ const EnhancedTable = () => {
                       <TableInfo width="16%">{user.username}</TableInfo>
                       <TableInfo width="20%">{user.email}</TableInfo>
                       <TableInfo width="14%">{user.phone}</TableInfo>
-                      <TableInfo width="16%" align="center">
+                      <TableButtons width="16%" align="center">
                           <EditUser userId={user.id} />
                           <Button variant="outlined" color="error" onClick={() => deleteUserData(user.id)}>
                             <DeleteIcon />
                           </Button>
-                      </TableInfo>
+                      </TableButtons>
                     </TableRow>
                   );
                 })}
