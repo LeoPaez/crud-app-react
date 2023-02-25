@@ -1,9 +1,9 @@
 import React, { useState, useEffect, createContext } from 'react'
 import { getUsers, deleteUser } from "../service/api"
 
-export const TodoContext = createContext()
+export const MyContext = createContext()
 
-export const TodoProvider = ({ children }) => {
+export const ContextProvider = ({ children }) => {
   const [users, setUsers] = useState([])
   const [search, setSearch] = useState ("")
 
@@ -18,7 +18,7 @@ export const TodoProvider = ({ children }) => {
 
   // delete user from the array of
   const deleteUserArray = (id) => {
-    const newUsers = users.filter(tarea => tarea.id !== id)
+    const newUsers = users.filter(user => user.id !== id)
     setUsers(newUsers);
   }
 
@@ -30,10 +30,10 @@ export const TodoProvider = ({ children }) => {
 
 
   return (
-    <TodoContext.Provider
+    <MyContext.Provider
       value={{ users, setUsers, deleteUserData, search, setSearch }}
     >
       {children}
-    </TodoContext.Provider>
+    </MyContext.Provider>
   )
 }

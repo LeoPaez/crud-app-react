@@ -3,7 +3,7 @@ import { styled, Button, TextField, Dialog, DialogActions, DialogContent, Dialog
 import AddIcon from '@mui/icons-material/Add';
 
 import { addUser} from "../service/api"
-import { TodoContext } from "../context/Context";
+import { MyContext } from "../context/Context";
 
 
 const AddUserButton = styled(Button)`
@@ -19,7 +19,7 @@ const initialValues = {
 }
 
 const AddUser = () => {
-  const { setUsers, users } = useContext(TodoContext)
+  const { setUsers, users } = useContext(MyContext)
 
   const [open, setOpen] = useState(false);
 
@@ -93,7 +93,7 @@ const AddUser = () => {
             margin="dense"
             id="phone"
             label="Phone"
-            type="number"
+            type="tel"
             fullWidth
             variant="standard"
             onChange={(e) => onValueChange(e)}

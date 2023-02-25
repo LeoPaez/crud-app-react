@@ -12,7 +12,7 @@ import {
 import EditIcon from '@mui/icons-material/Edit';
 
 import { getUser, editUser } from "../service/api"
-import { TodoContext } from "../context/Context";
+import { MyContext } from "../context/Context";
 
 const initialValues = {
   name: "",
@@ -22,7 +22,7 @@ const initialValues = {
 }
 
 const EditUser = ({ userId }) => {
-  const { users, setUsers } = useContext(TodoContext);
+  const { users, setUsers } = useContext(MyContext);
 
   const [user, setUser] = useState(initialValues)
   const [open, setOpen] = React.useState(false);
@@ -107,7 +107,7 @@ const EditUser = ({ userId }) => {
             margin="dense"
             id="phone"
             label="Phone"
-            type="number"
+            type="tel"
             fullWidth
             variant="standard"
             onChange={(e) => onValueChange(e)}

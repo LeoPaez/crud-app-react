@@ -7,7 +7,7 @@ import {
 
 import SearchIcon from '@mui/icons-material/Search';
 
-import { TodoContext } from "../context/Context";
+import { MyContext } from "../context/Context";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -52,7 +52,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const SearchBar = () => {
-  const { setSearch } = useContext(TodoContext)
+  const { setSearch } = useContext(MyContext)
 
   return (
     <Search>

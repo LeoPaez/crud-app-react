@@ -3,17 +3,15 @@ import './App.css'
 // components
 import NavBar from "./components/NavBar"
 import AllUsers from "./components/AllUsers"
-import AddUser from "./components/AddUser"
-import EditUser from "./components/EditUser"
-import { TodoProvider } from "./context/Context"
+import { ContextProvider } from "./context/Context"
 
 function App() {
   return (
     <div className="App">
-      <TodoProvider>
+      <ContextProvider>
         <NavBar />
         <AllUsers />
-      </TodoProvider>
+      </ContextProvider>
     </div>
   )
 }

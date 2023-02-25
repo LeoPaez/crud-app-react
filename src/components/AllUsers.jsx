@@ -24,7 +24,7 @@ import EditUser from "./EditUser";
 
 import SearchBar from "./SearchBar";
 import { AnimatePresence, motion } from "framer-motion";
-import { TodoContext } from "../context/Context";
+import { MyContext } from "../context/Context";
 
 const ToolBar = styled(Toolbar)`
   display: flex;
@@ -195,7 +195,7 @@ const EnhancedTableToolbar = () => {
 }
 
 const EnhancedTable = () => {
-  const { users, deleteUserData, search } = useContext(TodoContext)
+  const { users, deleteUserData, search } = useContext(MyContext)
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
